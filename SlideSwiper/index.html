@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+
+        body{
+            margin: 0;
+        }
+
+        .swiper-container {
+            width: 100vw;
+            height: auto;
+            padding-top: 60px;
+        }
+
+        .swiper-slide img{
+            width: 100vw;
+            height: auto;
+        }
+
+
+        /* Mobile Size */
+        @media screen and (min-width:50px) {
+            .mobile{
+                display: block;
+            }
+
+            .desktop{
+                display: none;
+            }
+        }
+
+        /* Desktop Size */
+        @media screen and (min-width:1170px) {
+            .mobile{
+                display: none;
+            }
+
+            .desktop{
+                display: block;
+            }
+        }
+
+        header{
+            width: 100%;
+            position: fixed;
+            background-color: teal;
+            z-index: 2;
+            padding: 20px 0px;
+        }
+
+        .logo {
+            float: left;
+            width: 100px;
+            padding-left: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        nav ul {
+            float: right;
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            margin-right: 20px;
+        }
+
+        nav ul li{
+            float: left;
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .feature{
+            padding: 0px 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LOGO</div>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERIVCE</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Slider main container -->
+    <div class="swiper-container desktop">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides Desktop Size-->
+            <div class="swiper-slide">
+                <img src="Assets/banner1.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="Assets/banner2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="Assets/banner3.jpg" alt="">
+            </div>
+
+        </div>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="swiper-container mobile">
+        <div class="swiper-wrapper">
+            <!-- Slides Mobile Size-->
+            <div class="swiper-slide ">
+                <img src="Assets/banner1_mobile.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="Assets/banner2_mobile.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="Assets/banner3_mobile.jpg" alt="">
+            </div>
+        </div>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="feature">
+        <h1>This is my feature</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum consequuntur suscipit eius eum hic cupiditate aliquid minima molestiae corporis, incidunt aliquam ex repellendus totam animi tempore nobis dolore, sapiente tempora.</p>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            mousewheel: true,
+
+            autoplay: {
+                delay: 2000,
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+    </script>
+</body>
+</html>
